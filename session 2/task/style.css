@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color:rgb(156, 125, 161);
+}
+
+header {
+    background-color: #6a4fbf;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.side-nav {
+    width: 250px;
+    background-color: #dcd0ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.side-nav img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.side-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.side-nav a:hover {
+    background-color: #6a4fbf;
+    color: white;
+}
+
+.content-container {
+    flex: 1;
+    background-color: #f5f0ff;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 400px;
+}
+
+.content {
+    display: none;
+}
+
+.content:target {
+    display: block;
+}
+
+body:not(:has(.content:target)) #personal {
+    display: block;
+}
+
+#personal .c {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+#personal .c1,
+#personal .c2 {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    color: #000;
+}
+
+#education .s {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+#education .s1,
+#education .s2 {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    color: #000;
+}
+
+
+#personal h2,
+#education h2,
+#projects h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4b0082;
+    margin: 20px 0;
+}
+
+#personal p,
+#education p,
+#projects p,
+#education li {
+    margin-bottom: 10px;
+}
+
+
+#education:target,
+#projects:target {
+    display: block;
+}
+
+#personal:not(:target) {
+    display: none;
+}
+
+.side-nav a[href="#personal"]:target,
+.side-nav a[href="#education"]:target,
+.side-nav a[href="#projects"]:target {
+    background-color: #6a4fbf;
+    color: white;
+}
+
+footer {
+    background-color: #6a4fbf;
+    color: white;
+    text-align: center;
+    position: fixed;
+    height:70px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer .contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+footer .social-media a {
+    color: white;
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+footer .social-media p {
+    color: white;
+    margin-left: 45px;
+    font-size: 18px;
+}
+
+footer .contact-info p {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 60px; 
+
+    .side-nav {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+
+    .side-nav a {
+        margin: 0 5px;
+        padding: 10px;
+    }
+
+    .content-container {
+        width: 100%;
+    }
+}
+}
